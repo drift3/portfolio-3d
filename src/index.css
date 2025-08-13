@@ -1,0 +1,250 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-dark-900 text-white;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .glass-effect {
+    @apply bg-white/10 backdrop-blur-md border border-white/20;
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-transparent;
+  }
+  
+  .floating-shape {
+    @apply absolute rounded-full opacity-20 animate-float;
+  }
+  
+  .section-padding {
+    @apply py-12 sm:py-16 lg:py-24;
+  }
+  
+  .container-custom {
+    @apply max-w-7xl mx-auto px-6 sm:px-8 lg:px-12;
+  }
+  
+  .btn-primary {
+    @apply bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white font-semibold py-2.5 px-6 sm:py-3 sm:px-8 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-lg text-sm sm:text-base;
+  }
+
+  .btn-secondary {
+    @apply bg-transparent border-2 border-primary-500 text-primary-400 hover:bg-primary-500 hover:text-white font-semibold py-2.5 px-6 sm:py-3 sm:px-8 rounded-full transition-all duration-300 transform hover:scale-105 text-sm sm:text-base;
+  }
+  
+  .card-hover {
+    @apply transition-all duration-300 transform hover:scale-105 hover:shadow-2xl;
+  }
+  
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  }
+}
+
+@layer utilities {
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+  
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+  
+  .animation-delay-600 {
+    animation-delay: 600ms;
+  }
+  
+  .animation-delay-800 {
+    animation-delay: 800ms;
+  }
+  
+  .shimmer {
+    animation: shimmer 2s infinite;
+  }
+  
+  @keyframes shimmer {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+@media (min-width: 640px) {
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+}
+
+::-webkit-scrollbar-track {
+  background: #1e293b;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #14b8a6;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0d9488;
+}
+
+/* Smooth transitions for route changes */
+.page-transition-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.page-transition-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.page-transition-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.page-transition-exit-active {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 300ms, transform 300ms;
+}
+
+/* Mobile-specific improvements */
+@media (max-width: 640px) {
+  .floating-shape {
+    display: none; /* Hide floating shapes on mobile for better performance */
+  }
+  
+  /* Ensure proper spacing on mobile */
+  body {
+    overflow-x: hidden;
+  }
+  
+  /* Better touch targets */
+  button, a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Prevent zoom on input focus */
+  input, textarea, select {
+    font-size: 16px;
+  }
+  
+  /* Fix text spacing issues */
+  h1, h2, h3, h4, h5, h6 {
+    line-height: 1.2;
+    margin-left: 0;
+    margin-right: 0;
+    word-wrap: break-word;
+  }
+  
+  /* Ensure buttons don't overflow */
+  .btn-primary, .btn-secondary {
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto;
+  }
+  
+  /* Ensure proper spacing for all sections */
+  section {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  
+  /* Mobile-specific positioning fixes */
+  .hero-section {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Scroll indicator mobile positioning */
+  .hero-section .scroll-indicator {
+    bottom: 12px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+  }
+  
+  /* Navigation dots mobile positioning */
+  .hero-section .nav-dots {
+    right: 6px !important;
+    bottom: 40px !important;
+  }
+  
+  /* Make dots more visible on mobile */
+  .nav-dots button {
+    background-color: rgba(255, 255, 255, 0.6) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  
+  .nav-dots button.active {
+    background-color: #14b8a6 !important;
+    box-shadow: 0 0 8px rgba(20, 184, 166, 0.5) !important;
+  }
+  
+  /* Ensure elements don't interfere with mobile UI */
+  .hero-section .absolute {
+    z-index: 20;
+  }
+}
+
+/* Extra small mobile screens */
+@media (max-width: 475px) {
+  .hero-section .scroll-indicator {
+    bottom: 8px !important;
+  }
+  
+  .hero-section .nav-dots {
+    right: 4px !important;
+    bottom: 32px !important;
+  }
+  
+  .hero-section .scroll-indicator span {
+    font-size: 10px !important;
+  }
+  
+  .nav-dots button {
+    width: 4px !important;
+    height: 4px !important;
+  }
+  
+  /* Footer copyright mobile fixes */
+  footer .copyright-text {
+    line-height: 1.4;
+    word-spacing: normal;
+  }
+  
+  footer .copyright-text span {
+    white-space: nowrap;
+  }
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
