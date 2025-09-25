@@ -47,19 +47,19 @@ const Contact = () => {
     {
       icon: Mail,
       label: 'Email',
-      value: 'ahmed.farouk@example.com',
-      href: 'mailto:ahmed.farouk@example.com'
+      value: 'a.fwork66@gmail.com',
+      href: 'mailto:a.fwork66@gmail.com'
     },
     {
       icon: Phone,
       label: 'Phone',
       value: '+20 234567867',
-      href: 'tel:+15551234567'
+      href: 'tel:+201020647876'
     },
     {
       icon: MapPin,
       label: 'Location',
-      value: 'San Francisco, CA',
+      value: 'Mansoura, Egypt',
       href: '#'
     }
   ];

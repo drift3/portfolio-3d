@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const LoadingScreen = () => {
   const [progress, setProgress] = useState(0);
-  const [loadingText, setLoadingText] = useState('Initializing...');
+  const [loadingText, setLoadingText] = useState('By Ahmed Farouk +201020647876');
 
   const loadingSteps = [
     { progress: 20, text: 'Loading assets...' },
@@ -60,41 +60,41 @@ const LoadingScreen = () => {
         </div>
 
         {/* Main Loading Content */}
-        <div className="relative z-10 text-center">
+        <div className="relative z-10 text-center px-4">
           {/* Logo/Brand */}
           <motion.div
             initial={{ scale: 0, rotate: -180 }}
             animate={{ scale: 1, rotate: 0 }}
             transition={{ duration: 1, ease: 'easeOut' }}
-            className="mb-12"
+            className="mb-8 sm:mb-12"
           >
-            <div className="w-20 h-20 mx-auto mb-4 relative">
+            <div className="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 relative">
               <motion.div
-                className="absolute inset-0 border-4 border-primary-500/30 rounded-full"
+                className="absolute inset-0 border-2 sm:border-4 border-primary-500/30 rounded-full"
                 animate={{ rotate: 360 }}
                 transition={{ duration: 2, repeat: Infinity, ease: 'linear' }}
               />
               <motion.div
-                className="absolute inset-2 border-4 border-accent-500/50 rounded-full"
+                className="absolute inset-1 sm:inset-2 border-2 sm:border-4 border-accent-500/50 rounded-full"
                 animate={{ rotate: -360 }}
                 transition={{ duration: 3, repeat: Infinity, ease: 'linear' }}
               />
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-8 h-8 bg-gradient-to-br from-primary-500 to-accent-500 rounded-full" />
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-primary-500 to-accent-500 rounded-full" />
               </div>
             </div>
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.8 }}
-              className="text-3xl font-bold gradient-text"
+              className="text-2xl sm:text-3xl font-bold gradient-text"
             >
               Portfolio
             </motion.h1>
           </motion.div>
 
           {/* Progress Bar */}
-          <div className="w-80 mx-auto mb-8">
+          <div className="w-full max-w-xs sm:max-w-sm mx-auto mb-8">
             <div className="flex justify-between items-center mb-4">
               <motion.span
                 key={loadingText}
@@ -159,13 +159,13 @@ const LoadingScreen = () => {
             <p className="text-gray-500 text-sm italic">
               "The best way to predict the future is to create it."
             </p>
-            <p className="text-gray-600 text-xs mt-2">- Peter Drucker</p>
+            <p className="text-gray-600 text-xs mt-2">- Ahmed Farouk</p>
           </motion.div>
         </div>
 
         {/* Geometric Background Elements */}
         <motion.div
-          className="absolute top-20 left-20 w-32 h-32 border border-primary-500/10 rotate-45"
+          className="absolute top-20 left-4 sm:left-20 w-16 h-16 sm:w-32 sm:h-32 border border-primary-500/10 rotate-45 hidden sm:block"
           animate={{
             rotate: [45, 405],
             scale: [1, 1.1, 1],
@@ -178,7 +178,7 @@ const LoadingScreen = () => {
         />
 
         <motion.div
-          className="absolute bottom-20 right-20 w-24 h-24 bg-gradient-to-br from-accent-500/10 to-primary-500/10 rounded-full"
+          className="absolute bottom-20 right-4 sm:right-20 w-16 h-16 sm:w-24 sm:h-24 bg-gradient-to-br from-accent-500/10 to-primary-500/10 rounded-full hidden sm:block"
           animate={{
             scale: [1, 1.2, 1],
             opacity: [0.3, 0.6, 0.3],
@@ -191,7 +191,7 @@ const LoadingScreen = () => {
         />
 
         <motion.div
-          className="absolute top-1/2 right-10 w-16 h-16 border-2 border-accent-500/20 rounded-full"
+          className="absolute top-1/2 right-4 sm:right-10 w-12 h-12 sm:w-16 sm:h-16 border-2 border-accent-500/20 rounded-full hidden sm:block"
           animate={{
             rotate: [0, 360],
             y: [-10, 10, -10],

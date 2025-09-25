@@ -1,0 +1,1 @@
+Inside each folder for each project, you will find a description of the project, a link to the project, and an embedded link.

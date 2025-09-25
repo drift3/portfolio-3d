@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { ExternalLink, Github, Eye, Filter, X } from 'lucide-react';
+import { ExternalLink, Github, Filter } from 'lucide-react';
 
 const Projects = () => {
   const [ref, inView] = useInView({
@@ -10,12 +10,12 @@ const Projects = () => {
   });
 
   const [selectedCategory, setSelectedCategory] = useState('all');
-  const [selectedProject, setSelectedProject] = useState(null);
+  // const [selectedProject, setSelectedProject] = useState(null); // Removed as eye icon functionality disabled
 
   const categories = [
     { id: 'all', label: 'All Projects' },
     { id: 'web', label: 'Web Apps' },
-    { id: 'mobile', label: 'Mobile' },
+    { id: 'graphic', label: 'Graphic Design' },
     { id: 'design', label: 'UI/UX' },
     { id: 'backend', label: 'Backend' }
   ];
@@ -23,25 +23,25 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: 'E-Commerce Platform',
+      title: 'Atlas Novels Publishing Platform',
       category: 'web',
-      description: 'A full-stack e-commerce solution with React, Node.js, and MongoDB. Features include user authentication, payment integration, and admin dashboard.',
-      image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      technologies: ['React', 'Node.js', 'MongoDB', 'Stripe', 'JWT'],
-      liveUrl: '#',
-      githubUrl: '#',
+      description: 'A comprehensive novel publishing platform built with Node.js, Express, MongoDB, and Tailwind CSS. Features user authentication, novel management, and modern publishing tools.',
+      image: 'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      technologies: ['Node.js', 'Express', 'MongoDB', 'Tailwind CSS', 'JWT'],
+      liveUrl: 'https://drift3-atlas-novels-2abbfd0a63d9.herokuapp.com/',
+      githubUrl: 'https://github.com/drift3',
       featured: true
     },
     {
       id: 2,
-      title: 'Task Management App',
-      category: 'mobile',
-      description: 'A React Native mobile app for task management with real-time synchronization and offline support.',
-      image: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      technologies: ['React Native', 'Firebase', 'Redux', 'AsyncStorage'],
-      liveUrl: '#',
+      title: 'Trika Sports Brand Identity',
+      category: 'graphic',
+      description: 'Complete branding project for "Trika | تريكا," a sportswear store. Created visual identity including bilingual logo, color palette, and branded mockups.',
+      image: `${process.env.PUBLIC_URL}/assets/graphic-design/Behance Project/Trika Project/Hoody-Mockup-Trika.jpg`,
+      technologies: ['Adobe Illustrator', 'Photoshop', 'Branding', 'Logo Design'],
+      liveUrl: 'https://www.behance.net/gallery/230899005/-Logo-Design-for-Sports-Brand',
       githubUrl: '#',
-      featured: false
+      featured: true
     },
     {
       id: 3,
@@ -67,24 +67,200 @@ const Projects = () => {
     },
     {
       id: 5,
-      title: 'Social Media Dashboard',
+      title: 'SkyFly Airline Booking',
       category: 'web',
-      description: 'A comprehensive dashboard for managing multiple social media accounts with analytics and scheduling features.',
-      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      technologies: ['Vue.js', 'Python', 'Django', 'PostgreSQL', 'Chart.js'],
-      liveUrl: '#',
-      githubUrl: '#',
+      description: 'A modern, creative, and professional airline booking website built with React, Tailwind CSS, and Framer Motion. This project showcases a premium travel experience with smooth animations, interactive components, and stunning visuals.',
+      image: `${process.env.PUBLIC_URL}/assets/screenshots/skyfly-airline-booking.png`,
+      technologies: ['React', 'Tailwind CSS', 'Framer Motion', 'JavaScript'],
+      liveUrl: 'https://drift3.github.io/skyfly-airline-booking/',
+      githubUrl: 'https://github.com/drift3',
       featured: true
     },
     {
       id: 6,
-      title: 'Fitness Tracking App',
-      category: 'mobile',
-      description: 'A mobile app for tracking workouts, nutrition, and progress with social features and gamification.',
-      image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      technologies: ['Flutter', 'Dart', 'Firebase', 'Google Fit API'],
-      liveUrl: '#',
+      title: 'Graphic Design Tasks Collection',
+      category: 'graphic',
+      description: 'A collection of diverse graphic design tasks showcasing various visual effects and styles including photo manipulation, digital art, and creative compositions.',
+      image: `${process.env.PUBLIC_URL}/assets/graphic-design/Tasks/Glowing-Girl.jpg`,
+      technologies: ['Photoshop', 'Digital Art', 'Photo Manipulation', 'Visual Effects'],
+      liveUrl: 'https://www.behance.net/gallery/231646355/Graphic-Design-Tasks-Visual-Effects-Styles',
       githubUrl: '#',
+      featured: false
+    },
+    {
+      id: 7,
+      title: 'Social Media Ad Designs',
+      category: 'graphic',
+      description: 'Creative social media advertisements and designs including yogurt ads, mobile device promotions, and Black Friday campaigns with mixed visual concepts.',
+      image: `${process.env.PUBLIC_URL}/assets/graphic-design/Social media/Yogurt Adv.png`,
+      technologies: ['Photoshop', 'Social Media Design', 'Advertisement Design', 'Digital Marketing'],
+      liveUrl: 'https://www.behance.net/gallery/231644777/Social-Media-Ad-Designs-Mixed-Concepts',
+      githubUrl: '#',
+      featured: false
+    },
+    {
+      id: 8,
+      title: 'Diamond Visual Effects',
+      category: 'graphic',
+      description: 'Stunning diamond visualization with realistic lighting effects, reflections, and premium jewelry presentation showcase.',
+      image: `${process.env.PUBLIC_URL}/assets/graphic-design/Tasks/Diamond.jpg`,
+      technologies: ['Photoshop', 'Visual Effects', '3D Rendering', 'Lighting Design'],
+      liveUrl: 'https://www.behance.net/gallery/231646355/Graphic-Design-Tasks-Visual-Effects-Styles',
+      githubUrl: '#',
+      featured: false
+    },
+    {
+      id: 9,
+      title: 'Digital Art Manipulation',
+      category: 'graphic',
+      description: 'Creative photo manipulation project featuring surreal digital art concepts with advanced compositing techniques and artistic vision.',
+      image: `${process.env.PUBLIC_URL}/assets/graphic-design/Tasks/Manipulation.jpg`,
+      technologies: ['Photoshop', 'Digital Art', 'Compositing', 'Creative Retouching'],
+      liveUrl: 'https://www.behance.net/gallery/231646355/Graphic-Design-Tasks-Visual-Effects-Styles',
+      githubUrl: '#',
+      featured: false
+    },
+    {
+      id: 10,
+      title: 'Halloween Pumpkin Design',
+      category: 'graphic',
+      description: 'Creative Halloween-themed design with atmospheric pumpkin illustration and dark mood lighting effects.',
+      image: `${process.env.PUBLIC_URL}/assets/graphic-design/Tasks/pumpkin.png`,
+      technologies: ['Photoshop', 'Illustration', 'Seasonal Design', 'Mood Lighting'],
+      liveUrl: 'https://www.behance.net/gallery/231646355/Graphic-Design-Tasks-Visual-Effects-Styles',
+      githubUrl: '#',
+      featured: false
+    },
+    {
+      id: 11,
+      title: 'QUEST Gaming Logo',
+      category: 'graphic',
+      description: 'Modern gaming logo design with bold typography and dynamic visual elements perfect for esports and gaming brands.',
+      image: `${process.env.PUBLIC_URL}/assets/graphic-design/Tasks/QUEST.png`,
+      technologies: ['Adobe Illustrator', 'Logo Design', 'Gaming Branding', 'Typography'],
+      liveUrl: 'https://www.behance.net/gallery/231646355/Graphic-Design-Tasks-Visual-Effects-Styles',
+      githubUrl: '#',
+      featured: false
+    },
+    {
+      id: 12,
+      title: 'Metallic Shine Effects',
+      category: 'graphic',
+      description: 'Professional metallic surface design with realistic chrome effects and sophisticated lighting techniques.',
+      image: `${process.env.PUBLIC_URL}/assets/graphic-design/Tasks/Shiny.png`,
+      technologies: ['Photoshop', 'Metallic Effects', 'Surface Design', 'Lighting'],
+      liveUrl: 'https://www.behance.net/gallery/231646355/Graphic-Design-Tasks-Visual-Effects-Styles',
+      githubUrl: '#',
+      featured: false
+    },
+    {
+      id: 13,
+      title: 'Fresh Juice Advertisement',
+      category: 'graphic',
+      description: 'Vibrant and refreshing juice advertisement design with dynamic splash effects and appetizing product presentation.',
+      image: `${process.env.PUBLIC_URL}/assets/graphic-design/Social media/Juice.png`,
+      technologies: ['Photoshop', 'Product Photography', 'Beverage Marketing', 'Visual Effects'],
+      liveUrl: 'https://www.behance.net/gallery/231644777/Social-Media-Ad-Designs-Mixed-Concepts',
+      githubUrl: '#',
+      featured: false
+    },
+    {
+      id: 14,
+      title: 'Mobile Device Promotion',
+      category: 'graphic',
+      description: 'Modern mobile device promotional design with sleek product presentation and contemporary marketing aesthetics.',
+      image: `${process.env.PUBLIC_URL}/assets/graphic-design/Social media/Phone-adv.png`,
+      technologies: ['Photoshop', 'Product Design', 'Tech Marketing', 'Modern Aesthetics'],
+      liveUrl: 'https://www.behance.net/gallery/231644777/Social-Media-Ad-Designs-Mixed-Concepts',
+      githubUrl: '#',
+      featured: false
+    },
+    {
+      id: 15,
+      title: 'Black Friday Campaign',
+      category: 'graphic',
+      description: 'High-impact Black Friday promotional campaign design with bold typography and compelling call-to-action elements.',
+      image: `${process.env.PUBLIC_URL}/assets/graphic-design/Social media/black_friday.png`,
+      technologies: ['Photoshop', 'Campaign Design', 'Promotional Graphics', 'Typography'],
+      liveUrl: 'https://www.behance.net/gallery/231644777/Social-Media-Ad-Designs-Mixed-Concepts',
+      githubUrl: '#',
+      featured: false
+    },
+    {
+      id: 16,
+      title: 'Trika Store Sign Mockup',
+      category: 'graphic',
+      description: 'Professional store signage design mockup for Trika sports brand, showcasing real-world brand implementation and environmental branding.',
+      image: `${process.env.PUBLIC_URL}/assets/graphic-design/Behance Project/Trika Project/Store-Sign trika-logo mockup.jpg`,
+      technologies: ['Adobe Illustrator', 'Mockup Design', 'Brand Implementation', 'Signage Design'],
+      liveUrl: 'https://www.behance.net/gallery/230899005/-Logo-Design-for-Sports-Brand',
+      githubUrl: '#',
+      featured: false
+    },
+    {
+      id: 17,
+      title: 'Trika T-Shirt Design',
+      category: 'graphic',
+      description: 'Clean and modern t-shirt mockup design for Trika sports brand, demonstrating apparel branding and merchandise design capabilities.',
+      image: `${process.env.PUBLIC_URL}/assets/graphic-design/Behance Project/Trika Project/white-t-shirt trika mockup.jpg`,
+      technologies: ['Adobe Illustrator', 'Apparel Design', 'Brand Application', 'Mockup Creation'],
+      liveUrl: 'https://www.behance.net/gallery/230899005/-Logo-Design-for-Sports-Brand',
+      githubUrl: '#',
+      featured: false
+    },
+    {
+      id: 18,
+      title: 'BookHaven E-commerce Store',
+      category: 'web',
+      description: 'BookHaven is a modern, responsive e-commerce web application designed specifically for selling books and novels. Built with React and styled with Tailwind CSS, it offers a seamless shopping experience across all devices.',
+      image: `${process.env.PUBLIC_URL}/assets/screenshots/bookhaven-ecommerce.png`,
+      technologies: ['React', 'Tailwind CSS', 'JavaScript', 'E-commerce'],
+      liveUrl: 'https://drift3.github.io/BookHaven-Store/',
+      githubUrl: 'https://github.com/drift3',
+      featured: true
+    },
+    {
+      id: 19,
+      title: 'Al-Dahawaqah Restaurant',
+      category: 'web',
+      description: 'A professional and responsive restaurant website built with React and Tailwind CSS with advanced animations and 3D effects, featuring an attractive, modern design and a warm orange color palette.',
+      image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      technologies: ['React', 'Tailwind CSS', '3D Effects', 'Animations'],
+      liveUrl: 'https://drift3.github.io/aldahawaqah-restaurant/',
+      githubUrl: 'https://github.com/drift3',
+      featured: false
+    },
+    {
+      id: 20,
+      title: 'Portfolio 3D - Personal Showcase',
+      category: 'web',
+      description: 'This is my portfolio for all my different fields, A modern, creative, and professional personal portfolio website built with React, Tailwind CSS, and Framer Motion. Features smooth animations, attractive visuals, and a unique user experience.',
+      image: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      technologies: ['React', 'Tailwind CSS', 'Framer Motion', '3D Effects'],
+      liveUrl: 'https://drift3.github.io/portfolio-3d/',
+      githubUrl: 'https://github.com/drift3',
+      featured: true
+    },
+    {
+      id: 21,
+      title: 'Graphic Design Portfolio',
+      category: 'web',
+      description: 'This is my portfolio for my graphic design, A modern, responsive portfolio website showcasing the creative work and professional services of Ahmed Farouk, a passionate graphic designer from Egypt.',
+      image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      technologies: ['HTML', 'CSS', 'JavaScript', 'Responsive Design'],
+      liveUrl: '#',
+      githubUrl: 'https://github.com/drift3',
+      featured: false
+    },
+    {
+      id: 22,
+      title: 'Karas Portfolio - Client Project',
+      category: 'web',
+      description: 'This is a project I did for a client named Karas, A modern, creative, and professional personal portfolio website built with React, TypeScript, and Tailwind CSS. Features smooth animations, responsive design, and a unique visual experience.',
+      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
+      liveUrl: '#',
+      githubUrl: 'https://github.com/drift3/karas-portfolio',
       featured: false
     }
   ];
@@ -137,6 +313,7 @@ const Projects = () => {
         {/* Overlay Actions */}
         <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
           <div className="flex space-x-2 sm:space-x-4">
+            {/* Eye icon disabled as requested by user
             <motion.button
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
@@ -145,6 +322,7 @@ const Projects = () => {
             >
               <Eye size={18} />
             </motion.button>
+            */}
             <motion.a
               href={project.liveUrl}
               target="_blank"
@@ -285,9 +463,9 @@ const Projects = () => {
           animate={inView ? "visible" : "hidden"}
           className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
         >
-          <AnimatePresence mode="wait">
+          <AnimatePresence>
             {filteredProjects.map((project, index) => (
-              <ProjectCard key={project.id} project={project} index={index} />
+              <ProjectCard key={`${project.id}-${selectedCategory}`} project={project} index={index} />
             ))}
           </AnimatePresence>
         </motion.div>
@@ -307,21 +485,27 @@ const Projects = () => {
         </motion.div>
       </div>
 
-      {/* Project Modal */}
-      <AnimatePresence>
+      {/* Project Modal - Disabled as eye icon functionality has been removed
+      <AnimatePresence mode="wait">
         {selectedProject && (
           <motion.div
+            key="modal-backdrop"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 bg-black/90 z-[9999] flex items-center justify-center p-4"
+            style={{ backdropFilter: 'blur(8px)' }}
             onClick={() => setSelectedProject(null)}
           >
             <motion.div
-              initial={{ scale: 0.8, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.8, opacity: 0 }}
-              className="glass-effect rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
+              key="modal-content"
+              initial={{ scale: 0.8, opacity: 0, y: 30 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.8, opacity: 0, y: 30 }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
+              className="bg-slate-900/95 border-2 border-teal-500/30 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl relative"
+              style={{ backdropFilter: 'blur(12px)' }}
               onClick={(e) => e.stopPropagation()}
             >
               <div className="relative">
@@ -332,23 +516,24 @@ const Projects = () => {
                 />
                 <button
                   onClick={() => setSelectedProject(null)}
-                  className="absolute top-4 right-4 w-10 h-10 rounded-full glass-effect flex items-center justify-center text-white hover:text-red-400 transition-colors duration-300"
+                  className="absolute top-4 right-4 w-12 h-12 rounded-full bg-red-600/80 hover:bg-red-500 border-2 border-red-400 flex items-center justify-center text-white hover:text-red-100 transition-all duration-200 hover:scale-110 shadow-xl z-10"
+                  style={{ backdropFilter: 'blur(8px)' }}
                 >
-                  <X size={20} />
+                  <X size={26} strokeWidth={2.5} />
                 </button>
               </div>
               
               <div className="p-8">
-                <h3 className="text-3xl font-bold text-white mb-4">{selectedProject.title}</h3>
-                <p className="text-gray-400 text-lg mb-6">{selectedProject.description}</p>
+                <h3 className="text-3xl font-bold text-white mb-4 leading-tight">{selectedProject.title}</h3>
+                <p className="text-gray-300 text-lg mb-6 leading-relaxed">{selectedProject.description}</p>
                 
-                <div className="mb-6">
-                  <h4 className="text-xl font-semibold text-white mb-3">Technologies Used</h4>
-                  <div className="flex flex-wrap gap-2">
+                <div className="mb-8">
+                  <h4 className="text-xl font-semibold text-white mb-4">Technologies Used</h4>
+                  <div className="flex flex-wrap gap-3">
                     {selectedProject.technologies.map((tech, index) => (
                       <span
                         key={index}
-                        className="px-3 py-1 bg-primary-500/20 text-primary-400 rounded-full text-sm"
+                        className="px-4 py-2 bg-teal-500/20 text-teal-300 border border-teal-500/30 rounded-full text-sm font-medium"
                       >
                         {tech}
                       </span>
@@ -356,16 +541,16 @@ const Projects = () => {
                   </div>
                 </div>
                 
-                <div className="flex space-x-2 sm:space-x-4">
+                <div className="flex flex-wrap gap-4">
                   <motion.a
                     href={selectedProject.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="btn-primary flex items-center space-x-2"
+                    className="px-6 py-3 bg-teal-600 hover:bg-teal-500 text-white rounded-lg font-medium flex items-center space-x-2 transition-colors duration-200"
                   >
-                    <ExternalLink size={18} />
+                    <ExternalLink size={20} />
                     <span>Live Demo</span>
                   </motion.a>
                   <motion.a
@@ -374,9 +559,9 @@ const Projects = () => {
                     rel="noopener noreferrer"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="btn-secondary flex items-center space-x-2"
+                    className="px-6 py-3 bg-gray-700 hover:bg-gray-600 text-white rounded-lg font-medium flex items-center space-x-2 transition-colors duration-200"
                   >
-                    <Github size={18} />
+                    <Github size={20} />
                     <span>View Code</span>
                   </motion.a>
                 </div>
@@ -385,6 +570,7 @@ const Projects = () => {
           </motion.div>
         )}
       </AnimatePresence>
+      */}
     </section>
   );
 };

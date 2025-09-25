@@ -20,9 +20,9 @@ const Footer = ({ setCurrentSection }) => {
   ];
 
   const contactInfo = [
-    { icon: Mail, text: 'ahmed.farouk@example.com', href: 'mailto:ahmed.farouk@example.com' },
-    { icon: Phone, text: '+1 (555) 123-4567', href: 'tel:+15551234567' },
-    { icon: MapPin, text: 'San Francisco, CA', href: '#' },
+    { icon: Mail, text: 'a.fwork66@gmail.com', href: 'mailto:a.fwork66@gmail.com' },
+    { icon: Phone, text: '+201020647879', href: 'tel:+201020647879' },
+    { icon: MapPin, text: 'Mansoura, Egypt', href: '#' },
   ];
 
   const scrollToTop = () => {

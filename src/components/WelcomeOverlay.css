@@ -1,0 +1,61 @@
+/* Performance optimizations for WelcomeOverlay */
+
+.cyberpunk-overlay {
+  will-change: transform, opacity;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+}
+
+.neon-particle {
+  will-change: transform, opacity;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.neon-grid-line {
+  will-change: opacity;
+  transform: translate3d(0, 0, 0);
+}
+
+.neon-circle-container {
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  contain: layout style;
+}
+
+/* Hardware acceleration for countdown text */
+.countdown-text {
+  will-change: transform, opacity;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  text-rendering: optimizeSpeed;
+}
+
+/* Optimize SVG performance */
+.circuit-svg {
+  will-change: auto;
+  shape-rendering: optimizeSpeed;
+}
+
+/* Reduce paint and layout thrashing */
+.cyberpunk-content {
+  contain: layout style;
+  isolation: isolate;
+}
+
+/* Force GPU compositing for glassmorphism backgrounds */
+.glassmorphism-bg {
+  transform: translate3d(0, 0, 0);
+  will-change: auto;
+  backface-visibility: hidden;
+}
+
+/* Optimize blur effects */
+.backdrop-blur-optimized {
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  will-change: auto;
+}

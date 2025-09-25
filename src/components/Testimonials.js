@@ -307,9 +307,9 @@ const Testimonials = () => {
           <motion.div variants={itemVariants} className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
               { number: '25+', label: 'Happy Clients' },
-              { number: '50+', label: 'Projects Completed' },
+              { number: '10+', label: 'Projects Completed' },
               { number: '100%', label: 'Satisfaction Rate' },
-              { number: '3+', label: 'Years Experience' }
+              { number: '1+', label: 'Years Experience' }
             ].map((stat, index) => (
               <motion.div
                 key={index}

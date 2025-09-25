@@ -15,7 +15,7 @@ const About = () => {
     { name: 'Node.js/Express', level: 85, color: 'from-green-500 to-emerald-500' },
     { name: 'Python/Django', level: 80, color: 'from-purple-500 to-pink-500' },
     { name: 'UI/UX Design', level: 88, color: 'from-pink-500 to-rose-500' },
-    { name: 'Database Design', level: 82, color: 'from-indigo-500 to-blue-500' }
+    { name: 'Graphic Design', level: 82, color: 'from-indigo-500 to-blue-500' }
   ];
 
   const experiences = [
@@ -152,7 +152,7 @@ const About = () => {
             >
               <div className="relative overflow-hidden rounded-2xl">
                 <img
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                  src={`${process.env.PUBLIC_URL}/me.jpg`}
                   alt="Profile"
                   className="w-full h-64 sm:h-80 lg:h-96 object-cover transition-transform duration-500 group-hover:scale-110"
                 />
@@ -189,8 +189,8 @@ const About = () => {
               {/* Quick Facts */}
               <div className="grid grid-cols-2 gap-4">
                 {[
-                  { icon: Award, label: 'Years Experience', value: '3+' },
-                  { icon: Heart, label: 'Projects Completed', value: '50+' }
+                  { icon: Award, label: 'Years Experience', value: '1+' },
+                  { icon: Heart, label: 'Projects Completed', value: '10+' }
                 ].map((fact, index) => (
                   <motion.div
                     key={index}

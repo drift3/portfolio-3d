@@ -115,25 +115,49 @@ Update the following files to customize content:
 ```
 src/
 ├── components/
-│   ├── Navigation.js      # Main navigation component
-│   ├── Hero.js           # Hero section with background images
-│   ├── About.js          # About section with skills & experience
-│   ├── Projects.js       # Projects showcase with filtering
-│   ├── Contact.js        # Contact form and information
-│   ├── BackgroundElements.js # Animated background elements
-│   └── LoadingScreen.js  # Initial loading animation
-├── App.js                # Main app component
-├── App.css              # Additional custom styles
-├── index.js             # React DOM render
-└── index.css            # Tailwind imports and global styles
+│   ├── Navigation.js            # Main navigation component
+│   ├── Hero.js                 # Hero section with background images
+│   ├── About.js                # About section with skills & experience
+│   ├── Projects.js             # Projects showcase with filtering
+│   ├── Contact.js              # Contact form and information
+│   ├── BackgroundElements.js   # Animated background elements
+│   ├── LoadingScreen.js        # Initial loading animation
+│   ├── WelcomeOverlay.js       # Cyberpunk neon countdown overlay
+│   ├── WelcomeOverlay.css      # Performance CSS for welcome overlay
+│   ├── PerformanceMonitor.js   # FPS/memory monitoring (dev only)
+│   └── CustomCursor.js         # Custom animated cursor
+├── App.js                      # Main app component
+├── App.css                    # Additional custom styles
+├── index.js                   # React DOM render
+└── index.css                  # Tailwind imports and global styles
 ```
 
 ## 🎯 Performance Optimizations
 
+### Core Optimizations
 - **Lazy Loading**: Components load only when needed
 - **Image Optimization**: Responsive images with proper sizing
-- **Animation Performance**: GPU-accelerated animations
+- **Animation Performance**: GPU-accelerated animations with hardware acceleration
 - **Code Splitting**: Automatic code splitting with Create React App
+
+### Animation Performance Enhancements
+- **Hardware Acceleration**: All animations use `transform3d()` and `will-change` properties
+- **Reduced Particle Count**: Optimized particle systems (6 grid lines, 8 particles vs. 12/20)
+- **Simplified Animations**: Linear easing for better performance, removed expensive blur filters
+- **GPU Compositing**: Forced GPU layers for glassmorphism and neon effects
+- **Memory Management**: Predictable animation patterns and optimized delays
+
+### CSS Performance Features
+- **Custom Performance CSS**: Dedicated stylesheet with hardware acceleration classes
+- **Containment**: CSS containment for layout and style optimization
+- **Backface Visibility**: Hidden backfaces to prevent unnecessary renders
+- **Shape Rendering**: Optimized SVG rendering with `optimizeSpeed`
+- **Text Rendering**: Speed-optimized text rendering for countdown elements
+
+### Performance Monitoring
+- **Real-time FPS Monitor**: Development-only performance tracking
+- **Memory Usage Tracking**: JavaScript heap size monitoring
+- **Frame Rate Optimization**: Maintains 15-60 FPS on average hardware
 
 ## 🌟 Key Features Explained
 
@@ -142,6 +166,26 @@ src/
 - Mobile-friendly slide-out menu
 - Smooth transitions and hover effects
 - Navigation dots for quick section jumping
+
+### Cyberpunk Neon Welcome Overlay
+- **Futuristic loading experience** with 5-second countdown animation
+- **Cyberpunk aesthetic** featuring neon cyan, purple, and pink color scheme
+- **Advanced neon effects** with multiple glow layers and text shadows
+- **Animated countdown circle** with rotating rings and progress visualization
+- **Responsive design** adapting from left-half (desktop) to top-half (mobile)
+- **Performance optimized** with reduced particle counts and hardware acceleration
+- **Glitch exit effects** with animated particle dissolution
+- **Monospace typography** with authentic cyberpunk styling
+
+### Animated GIF Reveal Component
+- **Spectacular fragment animation** with scattered circular pieces assembling into GIF
+- **Continuous chaotic animations** keeping the GIF alive and dynamic forever
+- **Futuristic neon effects** with pulsing glows, rotating particles, and gradient shifts
+- **Bottom-left floating position** as an elegant decorative element
+- **Fully responsive design** with automatic scaling (60% mobile, 40% small screens)
+- **Performance optimized** with hardware acceleration and reduced mobile particles
+- **Modular and reusable** - easily swap GIF sources via props
+- **Advanced animation system** with 25+ fragments, each with unique timing and effects
 
 ### Dynamic Hero Section
 - Rotating background images from Unsplash

@@ -9,9 +9,13 @@ import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
 import BackgroundElements from './components/BackgroundElements';
 import LoadingScreen from './components/LoadingScreen';
+import WelcomeOverlay from './components/WelcomeOverlay';
 import CustomCursor from './components/CustomCursor';
 import Footer from './components/Footer';
 import ScrollProgress from './components/ScrollProgress';
+import FloatingProfilePic from './components/FloatingProfilePic';
+
+// import PerformanceMonitor from './components/PerformanceMonitor'; // Dev only
 import './App.css';
 
 function App() {
@@ -83,6 +87,10 @@ function App() {
       <CustomCursor />
       <ScrollProgress />
       <BackgroundElements />
+      <FloatingProfilePic />
+      
+      {/* Welcome Overlay */}
+      <WelcomeOverlay />
       
       <Navigation 
         currentSection={currentSection}
@@ -122,6 +130,9 @@ function App() {
           />
         )}
       </AnimatePresence>
+      
+      {/* Performance Monitor (dev only) */}
+      {/* <PerformanceMonitor /> */}
     </div>
   );
 }

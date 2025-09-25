@@ -245,8 +245,8 @@ const Hero = ({ setCurrentSection }) => {
           className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8"
         >
           {[
-            { number: '50+', label: 'Projects Completed' },
-            { number: '3+', label: 'Years Experience' },
+            { number: '10+', label: 'Projects Completed' },
+            { number: '1+', label: 'Years Experience' },
             { number: '25+', label: 'Happy Clients' },
             { number: '100%', label: 'Satisfaction Rate' }
           ].map((stat, index) => (

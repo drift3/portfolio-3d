@@ -5,9 +5,9 @@ export const personalInfo = {
   name: 'Ahmed Farouk',
   title: 'Full Stack Developer',
   roles: ['Full Stack Developer', 'UI/UX Designer', 'Creative Coder', 'Problem Solver'],
-  email: 'ahmed.farouk@example.com',
-  phone: '+1 (555) 123-4567',
-  location: 'San Francisco, CA',
+  email: 'a.fwork66@gmail.com',
+  phone: '+201020647879',
+  location: 'Mansoura, Egypt',
   bio: `I'm a passionate full-stack developer with over 3 years of experience 
         creating digital solutions that make a difference. I love turning complex 
         problems into simple, beautiful, and intuitive designs.`,
@@ -120,8 +120,8 @@ export const testimonials = [
 ];
 
 export const stats = [
-  { number: '50+', label: 'Projects Completed' },
-  { number: '3+', label: 'Years Experience' },
+  { number: '10+', label: 'Projects Completed' },
+  { number: '1+', label: 'Years Experience' },
   { number: '25+', label: 'Happy Clients' },
   { number: '100%', label: 'Satisfaction Rate' }
 ];
@@ -131,7 +131,7 @@ export const services = [
     title: 'Web Development',
     description: 'Custom web applications built with modern technologies',
     icon: '🌐',
-    features: ['React/Next.js', 'Node.js/Express', 'Database Design', 'API Development']
+    features: ['React/Next.js', 'Node.js/Express', 'Graphic Design', 'API Development']
   },
   {
     title: 'Mobile Development',
