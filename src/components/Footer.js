@@ -21,7 +21,7 @@ const Footer = ({ setCurrentSection }) => {
 
   const contactInfo = [
     { icon: Mail, text: 'a.fwork66@gmail.com', href: 'mailto:a.fwork66@gmail.com' },
-    { icon: Phone, text: '+201020647879', href: 'tel:+201020647879' },
+    { icon: Phone, text: '+201020647876', href: 'tel:+201020647876' },
     { icon: MapPin, text: 'Mansoura, Egypt', href: '#' },
   ];
 

@@ -6,7 +6,7 @@ export const personalInfo = {
   title: 'Full Stack Developer',
   roles: ['Full Stack Developer', 'UI/UX Designer', 'Creative Coder', 'Problem Solver'],
   email: 'a.fwork66@gmail.com',
-  phone: '+201020647879',
+  phone: '+201020647876',
   location: 'Mansoura, Egypt',
   bio: `I'm a passionate full-stack developer with over 3 years of experience 
         creating digital solutions that make a difference. I love turning complex 
