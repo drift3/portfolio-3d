@@ -92,7 +92,7 @@ const Hero = ({ setCurrentSection }) => {
 
   const downloadCV = () => {
     // You can replace this with your actual CV file path
-    const cvUrl = '/Ahmed_Farouk_Resume.pdf'; // Place your CV in the public folder
+    const cvUrl = `${process.env.PUBLIC_URL}/Ahmed_Farouk_Resume.pdf`; // Place your CV in the public folder
     const link = document.createElement('a');
     link.href = cvUrl;
     link.download = 'Ahmed_Farouk_Resume.pdf';
