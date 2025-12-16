@@ -95,7 +95,7 @@ const Hero = ({ setCurrentSection }) => {
     const cvUrl = '/resume.pdf'; // Place your CV in the public folder
     const link = document.createElement('a');
     link.href = cvUrl;
-    link.download = 'John_Doe_Resume.pdf';
+    link.download = 'Ahmed_Farouk_Resume.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

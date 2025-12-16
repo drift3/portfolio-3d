@@ -1,7 +1,7 @@
 # Footer Copyright Mobile Fix
 
 ## 🚨 **Issue Identified**
-The copyright text "© 2024 John Doe. Made with ❤️ and lots of ☕" was not displaying well on small screens, causing text wrapping and layout issues.
+The copyright text "© 2025 Ahmed Farouk. Made with ❤️ and lots of ☕" was not displaying well on small screens, causing text wrapping and layout issues.
 
 ## 🔍 **Problem Analysis**
 **Before**: All copyright text was in a single flex row with `space-x-2`, causing:
@@ -15,7 +15,7 @@ The copyright text "© 2024 John Doe. Made with ❤️ and lots of ☕" was not 
 ```javascript
 // Before (Single line, problematic)
 <div className="flex items-center space-x-2 text-gray-400 text-sm">
-  <span>© {currentYear} John Doe. Made with</span>
+  <span>© {currentYear} Ahmed Farouk. Made with</span>
   <Heart />
   <span>and lots of ☕</span>
 </div>
@@ -23,7 +23,7 @@ The copyright text "© 2024 John Doe. Made with ❤️ and lots of ☕" was not 
 // After (Responsive, mobile-friendly)
 <div className="text-center md:text-left">
   <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start space-y-1 sm:space-y-0 sm:space-x-2 text-gray-400 text-xs sm:text-sm">
-    <span>© {currentYear} John Doe.</span>
+    <span>© {currentYear} Ahmed Farouk.</span>
     <div className="flex items-center space-x-2">
       <span>Made with</span>
       <Heart />
@@ -36,7 +36,7 @@ The copyright text "© 2024 John Doe. Made with ❤️ and lots of ☕" was not 
 ## 🎯 **Key Improvements Made**
 
 ### 1. **Two-Line Mobile Layout**
-- ✅ **Line 1**: "© 2024 John Doe."
+- ✅ **Line 1**: "© 2025 Ahmed Farouk."
 - ✅ **Line 2**: "Made with ❤️ and lots of ☕"
 - ✅ Clean separation prevents awkward wrapping
 
@@ -65,7 +65,7 @@ The copyright text "© 2024 John Doe. Made with ❤️ and lots of ☕" was not 
 ### **Extra Small Screens (≤640px)**
 ```
 ┌─────────────────────────┐
-│    © 2024 John Doe.     │
+│    © 2025 Ahmed Farouk.     │
 │  Made with ❤️ and lots  │
 │        of ☕            │
 │                         │
@@ -76,7 +76,7 @@ The copyright text "© 2024 John Doe. Made with ❤️ and lots of ☕" was not 
 ### **Small Screens and Up (≥640px)**
 ```
 ┌─────────────────────────────────────┐
-│ © 2024 John Doe. Made with ❤️ and   │
+│ © 2025 Ahmed Farouk. Made with ❤️ and   │
 │ lots of ☕              Back to top ↑│
 └─────────────────────────────────────┘
 ```
