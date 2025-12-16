@@ -53,7 +53,7 @@ const Contact = () => {
     {
       icon: Phone,
       label: 'Phone',
-      value: '+20 234567867',
+      value: '+20 1020647876',
       href: 'tel:+201020647876'
     },
     {
